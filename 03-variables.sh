@@ -2,5 +2,6 @@
 
 echo "Enter your Uname: "
 #read "Uname"
-read -s "Uname"
+
 echo "Uname entered : $Uname"
+read -s "Uname"
