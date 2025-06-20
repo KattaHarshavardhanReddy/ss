@@ -5,4 +5,4 @@
 
 sumz=$((2+2))
 
-echo sumz
+echo "sumz"
