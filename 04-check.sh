@@ -1,8 +1,8 @@
 #!bin/bash
 
-n1=2
-n2=2
+#n1=2
+#n2=2
 
-sumz=$((n1+n2))
+sumz=$((2+2))
 
 echo sumz
