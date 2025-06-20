@@ -1,8 +1,9 @@
 #!bin/bash
 
-#n1=2
-#n2=2
+USERID = $(id -u)
 
-sumz=$((2+2))
-
-echo $sumz
+if [ $USERID -ne 0]
+then
+echo "ur not root"
+exit 1
+fi
