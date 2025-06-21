@@ -33,3 +33,4 @@ exit 1
 else
 echo "git installed"
 fi
+fi
