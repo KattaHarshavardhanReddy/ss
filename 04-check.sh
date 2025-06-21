@@ -19,3 +19,11 @@ echo "mysql installed"
 fi
 
 dnf install git -y
+
+if [ $? -ne 0 ]
+then
+echo "git installation is failed"
+exit 1
+else
+echo "git installed"
+fi
