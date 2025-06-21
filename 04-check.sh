@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 USERID=$(id -u)
 
@@ -9,31 +9,30 @@ exit 1
 fi
 
 dnf list installed mysql
-
-if [ $? -ne 0 ]
-
-then
-
-dnf install mysql -y
-
 if [ $? -ne 0 ]
 then
-echo "mysql installation is failed"
-exit 1
+    dnf install mysql -y
+
+        if [ $? -ne 0 ]
+        then
+        echo "mysql installation is failed"
+        exit 1
+        else
+        echo "mysql installed"
+        fi
 else
-echo "mysql installed"
+echo "mysql is already installed"
 fi
 
-else
-echo "myswl is already installed"
-fi
-
-dnf install git -y
-
+dnf list installed git
 if [ $? -ne 0 ]
 then
-echo "git installation is failed"
-exit 1
-else
-echo "git installed"
-fi
+    dnf install git -y
+
+        if [ $? -ne 0 ]
+        then
+        echo "git installation is failed"
+        exit 1
+        else
+        echo "git installed"
+        fi
