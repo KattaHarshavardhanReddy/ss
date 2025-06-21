@@ -24,6 +24,10 @@ else
 echo "mysql installed"
 fi
 
+else
+echo "myswl is already installed"
+fi
+
 dnf install git -y
 
 if [ $? -ne 0 ]
@@ -32,5 +36,4 @@ echo "git installation is failed"
 exit 1
 else
 echo "git installed"
-fi
 fi
