@@ -2,6 +2,10 @@
 
 USERID=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+
 if [ $USERID -ne 0 ]
 then
     echo "ur not root"
@@ -12,20 +16,20 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 installation is failed"
+        echo -e "$2 installation is $R failed"
         exit 1
     else
-        echo "$2 installed"
+        echo -e "$2 $G installed"
     fi
 }
 
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
-    dnf install mysqll -y
+    dnf install mysql -y
     VALIDATE $? "Installing mysql"
 else
-    echo "mysql is already installed"
+    echo -e "mysql is already $Y installed"
 fi
 
 dnf list installed git
@@ -34,5 +38,5 @@ then
     dnf install git -y
     VALIDATE $? "installing git"
 else
-    echo "git is already is installed"
+    echo -e "git is already is $Y installed"
 fi
