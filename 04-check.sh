@@ -8,7 +8,7 @@ echo "ur not root"
 exit 1
 fi
 
-dnf install mysqll -y
+dnf install mysql -y
 
 if [ $? -ne 0 ]
 then
