@@ -9,7 +9,7 @@ N="\e[0m"
 
 logs_folder="/var/log/ss-logs/"
 logs_files="$(echo $0 | cut -d "." -f1)"
-Timestamp= $(date +%y-%m-%d-%H-%M-%S)
+Timestamp=$(date +%y-%m-%d-%H-%M-%S)
 Log_Name="$logs_folder/$logs_files-$Timestamp.log"
 
 # we are writing the function
