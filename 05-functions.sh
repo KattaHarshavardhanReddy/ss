@@ -6,8 +6,8 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-logs_folder="/var/logs/ss-logs/"
-log_files="$(echo $0 | cut -d "." -f1)"
+logs_folder="/var/log/ss-logs/"
+logs_files="$(echo $0 | cut -d "." -f1)"
 Timestamp= $(date +%y-%m-%d-%H-%M-%S)
 Log_Name="$logs_folder/$logs_files-$Timestamp.log"
 
