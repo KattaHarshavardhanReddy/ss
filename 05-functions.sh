@@ -6,7 +6,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-logs_folder="/var/logs/ss.logs/
+#logs_folder="/var/logs/ss-logs/
 
 if [ $USERID -ne 0 ]
 then
