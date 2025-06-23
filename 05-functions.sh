@@ -12,14 +12,6 @@ logs_files="$(echo $0 | cut -d "." -f1)"
 Timestamp= $(date +%y-%m-%d-%H-%M-%S)
 Log_Name="$logs_folder/$logs_files-$Timestamp.log"
 
-echo " Script started at: $Timestamp " &>>Log_Name
-
-if [ $USERID -ne 0 ]
-then
-    echo "ur not root"
-    exit 1
-fi
-
 # we are writing the function
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -30,6 +22,16 @@ VALIDATE(){
         echo -e "$2 $G installed $N"
     fi
 }
+
+echo " Script started at: $Timestamp " &>>Log_Name
+
+if [ $USERID -ne 0 ]
+then
+    echo "ur not root"
+    exit 1
+fi
+
+
 
 dnf list installed mysql &>>Log_Name
 if [ $? -ne 0 ]
