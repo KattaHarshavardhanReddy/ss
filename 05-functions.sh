@@ -6,7 +6,11 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-#logs_folder="/var/logs/ss-logs/
+logs_folder="/var/logs/ss-logs/"
+log_files="$(echo $0 | cut -d "." -f1)"
+Timestamp= $(date +%y-%m-%d-%H-%M-%S)
+
+echo " Script started at: $Timestamp "
 
 if [ $USERID -ne 0 ]
 then
