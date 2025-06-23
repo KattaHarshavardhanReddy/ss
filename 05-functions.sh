@@ -24,10 +24,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 installation is $R failed"
+        echo -e "$2 installation is $R failed $N"
         exit 1
     else
-        echo -e "$2 $G installed"
+        echo -e "$2 $G installed $N"
     fi
 }
 
@@ -37,7 +37,7 @@ then
     dnf install mysql -y &>>Log_Name
     VALIDATE $? "Installing mysql"
 else
-    echo -e "mysql is already $Y installed"
+    echo -e "mysql is already $Y installed $N"
 fi
 
 dnf list installed git &>>Log_Name
@@ -46,5 +46,5 @@ then
     dnf install git -y &>>Log_Name
     VALIDATE $? "installing git"
 else
-    echo -e "git is already is $Y installed"
+    echo -e "git is already is $Y installed $N"
 fi
