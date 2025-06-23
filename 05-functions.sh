@@ -11,7 +11,7 @@ log_files="$(echo $0 | cut -d "." -f1)"
 Timestamp= $(date +%y-%m-%d-%H-%M-%S)
 Log_Name="$logs_folder/$logs_files-$Timestamp.log"
 
-echo " Script started at: $Timestamp "
+echo " Script started at: $Timestamp " &>>Log_Name
 
 if [ $USERID -ne 0 ]
 then
@@ -30,19 +30,19 @@ VALIDATE(){
     fi
 }
 
-dnf list installed mysql
+dnf list installed mysql &>>Log_Name
 if [ $? -ne 0 ]
 then
-    dnf install mysql -y
+    dnf install mysql -y &>>Log_Name
     VALIDATE $? "Installing mysql"
 else
     echo -e "mysql is already $Y installed"
 fi
 
-dnf list installed git
+dnf list installed git &>>Log_Name
 if [ $? -ne 0 ]
 then
-    dnf install git -y
+    dnf install git -y &>>Log_Name
     VALIDATE $? "installing git"
 else
     echo -e "git is already is $Y installed"
