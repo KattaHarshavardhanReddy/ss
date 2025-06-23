@@ -9,6 +9,7 @@ Y="\e[33m"
 logs_folder="/var/logs/ss-logs/"
 log_files="$(echo $0 | cut -d "." -f1)"
 Timestamp= $(date +%y-%m-%d-%H-%M-%S)
+Log_Name="$logs_folder/$logs_files-$Timestamp.log"
 
 echo " Script started at: $Timestamp "
 
